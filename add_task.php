@@ -13,7 +13,7 @@ if ($todo_id == null || $todo_id == false ||
 
     // Add the product to the database  
     $query = 'INSERT INTO tasks
-                 (taskID, taskName)
+                 (todoID, taskName)
               VALUES
                  (:todo_id, :name)';
     $statement = $db->prepare($query);
