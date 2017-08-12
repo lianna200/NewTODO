@@ -19,7 +19,7 @@ $statement->closeCursor();
 
 <!-- the body section -->
 <body>
-    <header><h1>TO DO Manager</h1></header>
+    <header><h1>Task Manager</h1></header>
 
     <main>
         <h1>Add Task</h1>
