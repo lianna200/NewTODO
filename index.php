@@ -15,7 +15,7 @@ $queryTodo = 'SELECT * FROM todos
 $statement1 = $db->prepare($queryTodo);
 $statement1->bindValue(':todo_id', $todo_id);
 $statement1->execute();
-$todos = $statement1->fetch();
+$todo = $statement1->fetch();
 $todo_name = $todo['todoName'];
 $statement1->closeCursor();
 
