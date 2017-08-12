@@ -1,11 +1,11 @@
 <?php
 require('database.php');
 $query = 'SELECT *
-          FROM todo
+          FROM todos
           ORDER BY todoID';
 $statement = $db->prepare($query);
 $statement->execute();
-$categories = $statement->fetchAll();
+$todos = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $statement->closeCursor();
 
             <label>ToDO:</label>
             <select name="todo_id">
-            <?php foreach ($todo as $todo) : ?>
+            <?php foreach ($todos as $todo) : ?>
                 <option value="<?php echo $todo['todoID']; ?>">
                     <?php echo $todo['todoName']; ?>
                 </option>
