@@ -9,7 +9,7 @@ if ($todo_id == null || $todo_id == false) {
 } else {
     require_once('database.php');
 
-    // Add the product to the database  
+    // Delete from ToDO 
     $query = 'DELETE FROM todos 
               WHERE todoID = :todo_id';
     $statement = $db->prepare($query);
@@ -17,7 +17,7 @@ if ($todo_id == null || $todo_id == false) {
     $statement->execute();
     $statement->closeCursor();
 
-    // Display the Category List page
+    // Display the ToDo List page
     include('todo_list.php');
 }
 ?>
