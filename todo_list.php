@@ -46,12 +46,12 @@ $statement->closeCursor();
     <form action="add_todo.php" method="post"
           id="add_ctodo_form">
 
-        <label>Task Name:</label>
+        <label>ToDo Name:</label>
         <input type="text" name="name" />
         <input id="add_todo_button" type="submit" value="Add"/>
     </form>
     
-    <p><a href="index.php">List Task</a></p>
+    <p><a href="index.php">List ToDos</a></p>
 
 </main>
 <footer>
