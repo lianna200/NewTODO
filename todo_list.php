@@ -20,12 +20,12 @@ $statement->closeCursor();
 
 <!-- the body section -->
 <body>
-<header><h1>TAsk Manager</h1></header>
+<header><h1>ToDo List Manager</h1></header>
 <main>
     <h1>TO DO List</h1>
     <table>
         <tr>
-            <th>TAsk Name</th>
+            <th>To Do Name</th>
             <th>&nbsp;</th>
         </tr>        
         <?php foreach ($todos as $todo) : ?>
