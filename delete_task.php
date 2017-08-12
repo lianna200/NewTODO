@@ -2,15 +2,15 @@
 require_once('database.php');
 
 // Get IDs
-$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
-$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
+$task_id = filter_input(INPUT_POST, 'task_id', FILTER_VALIDATE_INT);
+$todo_id = filter_input(INPUT_POST, 'todo_id', FILTER_VALIDATE_INT);
 
 // Delete the product from the database
-if ($product_id != false && $category_id != false) {
-    $query = 'DELETE FROM products
-              WHERE productID = :product_id';
+if ($task_id != false && $todo_id != false) {
+    $query = 'DELETE FROM tasks
+              WHERE taskID = :task_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':task_id', $task_id);
     $success = $statement->execute();
     $statement->closeCursor();    
 }
