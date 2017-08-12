@@ -4,7 +4,7 @@ $todo_id = filter_input(INPUT_POST, 'todo_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 
 // Validate inputs
-if ($todo_id == null || $category_id == false ||
+if ($todo_id == null || $todo_id == false ||
    $name == null ) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
@@ -12,7 +12,7 @@ if ($todo_id == null || $category_id == false ||
     require_once('database.php');
 
     // Add the product to the database  
-    $query = 'INSERT INTO task
+    $query = 'INSERT INTO tasks
                  (taskID, taskName)
               VALUES
                  (:todo_id, :name)';
