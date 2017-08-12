@@ -6,7 +6,7 @@ $query = 'SELECT * FROM todos
                        ORDER BY todoID';
 $statement = $db->prepare($query);
 $statement->execute();
-$todo = $statement->fetchAll();
+$todos = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
