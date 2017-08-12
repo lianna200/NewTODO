@@ -39,7 +39,7 @@ $statement->closeCursor();
 
             <label>Name:</label>
           
-
+<input type="text" name="name"><br>
             <label>&nbsp;</label>
             <input type="submit" value="Add TAsk"><br>
         </form>
