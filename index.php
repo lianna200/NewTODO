@@ -9,7 +9,7 @@ if (!isset($todo_id)) {
         $todo_id = 1;
     }
 }
-// Get name for selected category
+// Get name for selected TO Do
 $queryTodo = 'SELECT * FROM todos
                   WHERE todoID = :todo_id';
 $statement1 = $db->prepare($queryTodo);
@@ -20,7 +20,7 @@ $todo_name = $todo['todoName'];
 $statement1->closeCursor();
 
 
-// Get all categories
+// Get all TO Dos
 $query = 'SELECT * FROM todos
                        ORDER BY todoID';
 $statement = $db->prepare($query);
@@ -28,7 +28,7 @@ $statement->execute();
 $todos = $statement->fetchAll();
 $statement->closeCursor();
 
-// Get products for selected category
+// Get task for selected TO Do
 $queryTask = 'SELECT * FROM tasks
                   WHERE todoID = :todo_id
                   ORDER BY taskID';
@@ -54,7 +54,7 @@ $statement3->closeCursor();
     <h1>TO Do List</h1>
 
     <aside>
-        <!-- display a list of categories -->
+        <!-- display a list of TO Dos -->
         <h2>TO Dos</h2>
         <nav>
         <ul>
@@ -69,7 +69,7 @@ $statement3->closeCursor();
     </aside>
 
     <section>
-        <!-- display a table of products -->
+        <!-- display a table of tasks -->
         <h2><?php echo $todo_name; ?></h2>
         <table>
             <tr>
