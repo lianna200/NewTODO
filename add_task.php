@@ -1,5 +1,5 @@
 <?php
-// Get the product data
+// Get the task data
 $todo_id = filter_input(INPUT_POST, 'todo_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 
@@ -11,7 +11,7 @@ if ($todo_id == null || $todo_id == false ||
 } else {
     require_once('database.php');
 
-    // Add the product to the database  
+    // Add the task to the database  
     $query = 'INSERT INTO tasks
                  (todoID, taskName)
               VALUES
