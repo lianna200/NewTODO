@@ -2,11 +2,11 @@
 require_once('database.php');
 
 // Get all categories
-$query = 'SELECT * FROM todo
+$query = 'SELECT * FROM todos
                        ORDER BY todoID';
 $statement = $db->prepare($query);
 $statement->execute();
-$categories = $statement->fetchAll();
+$todo = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $statement->closeCursor();
             <th>TAsk Name</th>
             <th>&nbsp;</th>
         </tr>        
-        <?php foreach ($todo as $todo) : ?>
+        <?php foreach ($todos as $todo) : ?>
         <tr>
             <td><?php echo $todo['todoName']; ?></td>
             <td>
