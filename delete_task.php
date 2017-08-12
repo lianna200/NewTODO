@@ -5,7 +5,7 @@ require_once('database.php');
 $task_id = filter_input(INPUT_POST, 'task_id', FILTER_VALIDATE_INT);
 $todo_id = filter_input(INPUT_POST, 'todo_id', FILTER_VALIDATE_INT);
 
-// Delete the product from the database
+// Delete the task from the database
 if ($task_id != false && $todo_id != false) {
     $query = 'DELETE FROM tasks
               WHERE taskID = :task_id';
@@ -15,5 +15,5 @@ if ($task_id != false && $todo_id != false) {
     $statement->closeCursor();    
 }
 
-// Display the Product List page
+// Display the Task List page
 include('index.php');
