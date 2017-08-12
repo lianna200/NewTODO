@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 
-// Get category ID
+// Get ToDos ID
 if (!isset($todo_id)) {
     $todo_id = filter_input(INPUT_GET, 'todo_id', 
             FILTER_VALIDATE_INT);
@@ -11,7 +11,7 @@ if (!isset($todo_id)) {
 }
 // Get name for selected category
 $queryTodo = 'SELECT * FROM todos
-                  WHERE categoryID = :category_id';
+                  WHERE todoID = :todo_id';
 $statement1 = $db->prepare($queryTodo);
 $statement1->bindValue(':todo_id', $todo_id);
 $statement1->execute();
