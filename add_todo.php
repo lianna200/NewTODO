@@ -1,5 +1,5 @@
 <?php
-// Get the category data
+// Get todo data
 $name = filter_input(INPUT_POST, 'name');
 
 // Validate inputs
@@ -9,7 +9,7 @@ if ($name == null) {
 } else {
     require_once('database.php');
 
-    // Add the product to the database  
+    // Add the todo to the database  
     $query = 'INSERT INTO todos (todoName)
               VALUES (:todo_name)';
     $statement = $db->prepare($query);
@@ -17,7 +17,7 @@ if ($name == null) {
     $statement->execute();
     $statement->closeCursor();
 
-    // Display the Category List page
+    // Display the ToDo List page
     include('todo_list.php');
 }
 ?>
