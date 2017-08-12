@@ -10,32 +10,32 @@ if (!isset($todo_id)) {
     }
 }
 // Get name for selected category
-$queryTodo = 'SELECT * FROM todo
+$queryTodo = 'SELECT * FROM todos
                   WHERE categoryID = :category_id';
 $statement1 = $db->prepare($queryTodo);
 $statement1->bindValue(':todo_id', $todo_id);
 $statement1->execute();
-$category = $statement1->fetch();
-$category_name = $todo['todoName'];
+$todo = $statement1->fetch();
+$todo_name = $todo['todoName'];
 $statement1->closeCursor();
 
 
 // Get all categories
-$query = 'SELECT * FROM todo
+$query = 'SELECT * FROM todos
                        ORDER BY todoID';
 $statement = $db->prepare($query);
 $statement->execute();
-$categories = $statement->fetchAll();
+$todos = $statement->fetchAll();
 $statement->closeCursor();
 
 // Get products for selected category
-$queryTask = 'SELECT * FROM task
+$queryTask = 'SELECT * FROM tasks
                   WHERE todoID = :todo_id
                   ORDER BY taskID';
 $statement3 = $db->prepare($queryTask);
 $statement3->bindValue(':todo_id', $todo_id);
 $statement3->execute();
-$products = $statement3->fetchAll();
+$tasks = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -58,7 +58,7 @@ $statement3->closeCursor();
         <h2>TO Dos</h2>
         <nav>
         <ul>
-            <?php foreach ($todo as $todo) : ?>
+            <?php foreach ($todos as $todo) : ?>
             <li><a href=".?todo_id=<?php echo $todo['todoID']; ?>">
                     <?php echo $todo['todoName']; ?>
                 </a>
@@ -79,7 +79,7 @@ $statement3->closeCursor();
                 <th>&nbsp;</th>
             </tr>
 
-            <?php foreach ($task as $task) : ?>
+            <?php foreach ($tasks as $task) : ?>
             <tr>
              
                 <td><?php echo $task['taskName']; ?></td>
