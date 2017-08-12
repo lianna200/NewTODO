@@ -49,7 +49,7 @@ $statement3->closeCursor();
 
 <!-- the body section -->
 <body>
-<header><h1>TO DO List MAnager</h1></header>
+<header><h1>TO Do List Manager</h1></header>
 <main>
     <h1>TO Do List</h1>
 
@@ -74,7 +74,7 @@ $statement3->closeCursor();
         <table>
             <tr>
        
-                <th>Name</th>
+                <th>Task Name</th>
                
                 <th>&nbsp;</th>
             </tr>
