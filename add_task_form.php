@@ -22,7 +22,7 @@ $statement->closeCursor();
     <header><h1>TO DO Manager</h1></header>
 
     <main>
-        <h1>Add TAsk</h1>
+        <h1>Add Task</h1>
         <form action="add_task.php" method="post"
               id="add_task_form">
 
@@ -41,13 +41,13 @@ $statement->closeCursor();
           
 <input type="text" name="name"><br>
             <label>&nbsp;</label>
-            <input type="submit" value="Add TAsk"><br>
+            <input type="submit" value="Add Task"><br>
         </form>
-        <p><a href="index.php">View TAsk List</a></p>
+        <p><a href="index.php">View Task List</a></p>
     </main>
 
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> M TO Do.</p>
+        <p>&copy; <?php echo date("Y"); ?> My TO Do.</p>
     </footer>
 </body>
 </html>
